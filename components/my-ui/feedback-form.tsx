@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shadcn-ui/button";
 import {
   Dialog,
   DialogContent,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/shadcn-ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -20,8 +20,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Textarea } from "@/components/ui/textarea";
+} from "@/components/shadcn-ui/drawer";
+import { Textarea } from "@/components/shadcn-ui/textarea";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 function FeedbackFormContent({

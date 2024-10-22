@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FeedbackForm } from "./feedback-dialog";
+import { FeedbackForm } from "./feedback-form";
 
 export default function Footer() {
   return (

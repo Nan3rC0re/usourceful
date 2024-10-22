@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shadcn-ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/shadcn-ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -19,9 +19,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+} from "@/components/shadcn-ui/drawer";
+import { Input } from "@/components/shadcn-ui/input";
+import { Textarea } from "@/components/shadcn-ui/textarea";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 function SuggestionFormContent({
@@ -96,7 +96,7 @@ export function SuggestionForm() {
         <DialogTrigger asChild>{triggerButton}</DialogTrigger>
         <DialogContent className="sm:max-w-[600px] border border-input bg-background">
           <DialogHeader>
-            <DialogTitle>Suggest a Resource</DialogTitle>
+            <DialogTitle>Suggest a resource</DialogTitle>
             <DialogDescription>
               Have a great resource to share? Let me know so I can add it to the
               site!
@@ -113,7 +113,7 @@ export function SuggestionForm() {
       <DrawerTrigger asChild>{triggerButton}</DrawerTrigger>
       <DrawerContent className="border border-input bg-background">
         <DrawerHeader className="text-left">
-          <DrawerTitle>Suggest a Resource</DrawerTitle>
+          <DrawerTitle>Suggest a resource</DrawerTitle>
           <DrawerDescription>
             Have a great resource to share? Let me know so I can add it to the
             site!
