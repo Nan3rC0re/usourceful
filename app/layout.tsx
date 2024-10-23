@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/my-ui/navbar";
 import Footer from "@/components/my-ui/footer";
 import { ThemeProvider } from "@/components/shadcn-ui/theme-provider";
 

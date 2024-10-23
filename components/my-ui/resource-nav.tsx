@@ -3,6 +3,7 @@
 import React from "react";
 import { Button } from "@/components/shadcn-ui/button";
 import { SuggestionForm } from "./suggestion-form";
+import { RequestForm } from "./request-resource";
 
 interface ResourceLink {
   name: string;
@@ -12,6 +13,8 @@ interface ResourceLink {
 const componentsData: ResourceLink[] = [
   { name: "Early Careers", href: "/" },
   { name: "Organizations", href: "/organizations" },
+  { name: "Career Paths", href: "/career-paths" },
+  { name: "Courses", href: "/courses" },
 ];
 
 interface ResourceNavProps {
@@ -24,9 +27,13 @@ export default function ResourceNav({
   currentPage,
 }: ResourceNavProps) {
   return (
-    <nav className="flex justify-between sm:items-center gap-4 flex-col sm:flex-row">
-      <SuggestionForm />
-      <div className="flex gap-2 order-2 sm:order-1">
+    <nav className="flex  justify-between sm:items-center gap-12 flex-col sm:flex-row">
+      <div className="order-1 sm:order-2 flex gap-3">
+        <SuggestionForm />
+        <RequestForm />
+      </div>
+      {/* make this scrollable rather than being wrapped */}
+      <div className="flex flex-wrap  w-full gap-2 order-2 sm:order-1 ">
         {componentsData.map((nav, index) => (
           <Button
             key={index}

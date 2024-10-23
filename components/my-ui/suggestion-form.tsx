@@ -42,6 +42,7 @@ function SuggestionFormContent({
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-4 py-4">
+        {/* Change the focus color for input/textarea to a neutral rathar than white */}
         <div className="flex flex-col gap-4 items-start">
           <Input
             id="resourceUrl"
@@ -58,7 +59,7 @@ function SuggestionFormContent({
             id="resourceDescription"
             value={resourceDescription}
             onChange={(e) => setResourceDescription(e.target.value)}
-            className="bg-white/5 h-[100px]"
+            className="bg-white/5 h-[150px]"
             required
             placeholder="Description"
           />
@@ -85,7 +86,7 @@ export function SuggestionForm() {
   }, []);
 
   const triggerButton = (
-    <Button className="w-fit order-1 sm:order-2" variant="ghost" size="sm">
+    <Button className="w-fit" variant="ghost" size="sm">
       Suggest a resource
     </Button>
   );

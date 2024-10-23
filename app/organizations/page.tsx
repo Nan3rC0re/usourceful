@@ -67,7 +67,7 @@ export default function EarlyCareers() {
     <div className="w-full flex flex-col mt-2  text-start  p-1  overflow-hidden h-full mb-40 ">
       <h1 className="mb-12 text-sm border-b py-4 border-neutral-800">
         Communities and programs designed to support, mentor, and provide
-        opportunities for students pursuing a career in technology.
+        opportunities for students pursuing a career in tech.
       </h1>
       {orgs.map((orgs, index) => (
         <OrgItems key={index} {...orgs} />

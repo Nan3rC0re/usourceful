@@ -23,31 +23,34 @@ import {
 import { Textarea } from "@/components/shadcn-ui/textarea";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-function FeedbackFormContent({
+function RequestFormContent({
   onSubmit,
 }: {
-  onSubmit: (feedback: string) => void;
+  onSubmit: (url: string, description: string) => void;
 }) {
-  const [feedback, setFeedback] = useState("");
+  const [resourceUrl, setResourceUrl] = useState("");
+  const [resourceDescription, setResourceDescription] = useState("");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    onSubmit(feedback);
-    setFeedback("");
+    onSubmit(resourceUrl, resourceDescription);
+    setResourceUrl("");
+    setResourceDescription("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-4 py-4">
+        <div className="flex flex-col gap-4 items-start"></div>
          {/* Change the focus color for textarea to a neutral rathar than white */}
         <div className="flex flex-col gap-4 items-start">
           <Textarea
-            id="feedbackText"
-            value={feedback}
-            onChange={(e) => setFeedback(e.target.value)}
+            id="resourceDescription"
+            value={resourceDescription}
+            onChange={(e) => setResourceDescription(e.target.value)}
             className="bg-white/5 h-[200px]"
             required
-            placeholder="Your feedback..."
+            placeholder="Can there be a resource that ..."
           />
         </div>
       </div>
@@ -56,24 +59,24 @@ function FeedbackFormContent({
         className="w-full h-12 bg-white/5"
         variant="outline"
       >
-        Submit Feedback
+        Submit Request
       </Button>
     </form>
   );
 }
 
-export function FeedbackForm() {
+export function RequestForm() {
   const [isOpen, setIsOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 639px)");
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  const handleSubmit = useCallback((feedback: string) => {
-    console.log({ feedback });
+  const handleSubmit = useCallback((url: string, description: string) => {
+    console.log({ resourceUrl: url, resourceDescription: description });
     setIsOpen(false);
   }, []);
 
   const triggerButton = (
-    <Button className="w-fit order-1 sm:order-2 p-0" variant="link" size="sm">
-      Send feedback
+    <Button className="w-fit " variant="ghost" size="sm">
+      Request a resource
     </Button>
   );
 
@@ -83,12 +86,12 @@ export function FeedbackForm() {
         <DialogTrigger asChild>{triggerButton}</DialogTrigger>
         <DialogContent className="sm:max-w-[600px] border border-input bg-background">
           <DialogHeader>
-            <DialogTitle>Send feedback </DialogTitle>
+            <DialogTitle>Request a resource</DialogTitle>
             <DialogDescription>
-              Let me know how the site is helping you or any bugs you may find.
+              Don't see anything that is useful at the moment? Send a request.
             </DialogDescription>
           </DialogHeader>
-          <FeedbackFormContent onSubmit={handleSubmit} />
+          <RequestFormContent onSubmit={handleSubmit} />
         </DialogContent>
       </Dialog>
     );
@@ -99,13 +102,13 @@ export function FeedbackForm() {
       <DrawerTrigger asChild>{triggerButton}</DrawerTrigger>
       <DrawerContent className="border border-input bg-background">
         <DrawerHeader className="text-left">
-          <DrawerTitle>Send feedback</DrawerTitle>
+          <DrawerTitle>Request a resource</DrawerTitle>
           <DrawerDescription>
-            Let me know how the site is helping you or any bugs you may find.
+            Don't see anything that is useful at the moment? Send a request.
           </DrawerDescription>
         </DrawerHeader>
         <div className="px-4">
-          <FeedbackFormContent onSubmit={handleSubmit} />
+          <RequestFormContent onSubmit={handleSubmit} />
         </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>

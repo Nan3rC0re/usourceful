@@ -1,8 +1,10 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import ResourceNav from "@/components/my-ui/resource-nav";
 import EarlyCareers from "./early-careers/page";
 import Organizations from "./organizations/page";
+import CareerPath from "./career-paths/page";
+import Courses from "./courses/pages";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState("Early Careers");
@@ -13,6 +15,10 @@ export default function Home() {
         return <EarlyCareers />;
       case "Organizations":
         return <Organizations />;
+      case "Career Paths":
+        return <CareerPath />;
+      case "Courses":
+        return <Courses />;
       default:
         return <EarlyCareers />;
     }
