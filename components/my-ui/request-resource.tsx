@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Button } from "@/components/shadcn-ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/shadcn-ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -19,8 +19,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/shadcn-ui/drawer";
-import { Textarea } from "@/components/shadcn-ui/textarea";
+} from "@/components/ui/drawer";
+import { Textarea } from "@/components/ui/textarea";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 function RequestFormContent({
@@ -42,7 +42,7 @@ function RequestFormContent({
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-4 py-4">
         <div className="flex flex-col gap-4 items-start"></div>
-         {/* Change the focus color for textarea to a neutral rathar than white */}
+        {/* Change the focus color for textarea to a neutral rathar than white */}
         <div className="flex flex-col gap-4 items-start">
           <Textarea
             id="resourceDescription"

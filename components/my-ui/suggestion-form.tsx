@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Button } from "@/components/shadcn-ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/shadcn-ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -19,9 +19,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/shadcn-ui/drawer";
-import { Input } from "@/components/shadcn-ui/input";
-import { Textarea } from "@/components/shadcn-ui/textarea";
+} from "@/components/ui/drawer";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 function SuggestionFormContent({

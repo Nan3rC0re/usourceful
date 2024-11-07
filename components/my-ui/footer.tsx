@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FeedbackForm } from "./feedback-form";
+import FeedbackForm from "@/components/my-ui/feedback-form";
 
 export default function Footer() {
   return (

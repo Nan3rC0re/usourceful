@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/my-ui/footer";
-import { ThemeProvider } from "@/components/shadcn-ui/theme-provider";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 export const metadata: Metadata = {
   title: "Usourseful",

@@ -33,7 +33,6 @@ export default function Home() {
         <p className="md:text-lg text-sm mt-1 text-muted-foreground">
           New resources added frequently
         </p>
-
         <div className="new-additions-container flex flex-col gap-4 h-[100%] w-full max-w-4xl mt-[100px]">
           <ResourceNav
             setCurrentPage={setCurrentPage}

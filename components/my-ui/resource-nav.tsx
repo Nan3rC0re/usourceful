@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/shadcn-ui/button";
-import { SuggestionForm } from "./suggestion-form";
-import { RequestForm } from "./request-resource";
+import { Button } from "@/components/ui/button";
+// import { SuggestionForm } from "./suggestion-form";
+// import { RequestForm } from "./request-resource";
 
 interface ResourceLink {
   name: string;
@@ -29,8 +29,8 @@ export default function ResourceNav({
   return (
     <nav className="flex  justify-between sm:items-center gap-12 flex-col sm:flex-row">
       <div className="order-1 sm:order-2 flex gap-3">
-        <SuggestionForm />
-        <RequestForm />
+        {/* <SuggestionForm />
+        <RequestForm /> */}
       </div>
       {/* make this scrollable rather than being wrapped */}
       <div className="flex flex-wrap  w-full gap-2 order-2 sm:order-1 ">

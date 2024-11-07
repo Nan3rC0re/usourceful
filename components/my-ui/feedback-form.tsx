@@ -1,111 +1,157 @@
-"use client";
+"use client"
 
-import { useState, useCallback } from "react";
-import { Button } from "@/components/shadcn-ui/button";
+import { useState, useCallback } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
-} from "@/components/shadcn-ui/dialog";
+} from "@/components/ui/dialog"
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
-} from "@/components/shadcn-ui/drawer";
-import { Textarea } from "@/components/shadcn-ui/textarea";
-import { useMediaQuery } from "@/hooks/use-media-query";
+} from "@/components/ui/drawer"
+import { Textarea } from "@/components/ui/textarea"
+import { useMediaQuery } from "@/hooks/use-media-query"
+import { CheckCircle2, Loader2 } from "lucide-react"
+import { createClient } from "@supabase/supabase-js"
+import { useFormStatus } from "react-dom"
+import { useFormState } from "react-dom"
 
-function FeedbackFormContent({
-  onSubmit,
-}: {
-  onSubmit: (feedback: string) => void;
-}) {
-  const [feedback, setFeedback] = useState("");
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    onSubmit(feedback);
-    setFeedback("");
-  };
+async function submitFeedback(prevState: any, formData: FormData) {
+  const feedback = formData.get("feedback") as string
+  try {
+    const { data, error } = await supabase
+      .from("feedback")
+      .insert([{ feedback: feedback }])
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-4 py-4">
-         {/* Change the focus color for textarea to a neutral rathar than white */}
-        <div className="flex flex-col gap-4 items-start">
-          <Textarea
-            id="feedbackText"
-            value={feedback}
-            onChange={(e) => setFeedback(e.target.value)}
-            className="bg-white/5 h-[200px]"
-            required
-            placeholder="Your feedback..."
-          />
-        </div>
-      </div>
-      <Button
-        type="submit"
-        className="w-full h-12 bg-white/5"
-        variant="outline"
-      >
-        Submit Feedback
-      </Button>
-    </form>
-  );
+    if (error) throw error
+
+    console.log("Feedback submitted:", data)
+    return {
+      type: "success",
+    }
+  } catch (error) {
+    console.error("Error submitting feedback:", error)
+    return {
+      type: "error",
+      message: "Failed to submit feedback. Please try again.",
+    }
+  }
 }
 
-export function FeedbackForm() {
-  const [isOpen, setIsOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 639px)");
+function FeedbackFormContent() {
+  const { pending } = useFormStatus()
+  const [state, formAction] = useFormState(submitFeedback, null)
 
-  const handleSubmit = useCallback((feedback: string) => {
-    console.log({ feedback });
-    setIsOpen(false);
-  }, []);
+  return (
+    <AnimatePresence mode="wait">
+      {state?.type === "success" ? (
+        <motion.div
+          key="success"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="flex flex-col items-center justify-center py-8 space-y-4"
+        >
+          <CheckCircle2 className="w-16 h-16 text-green-500" />
+          <h3 className="text-xl font-semibold">Feedback Successfully Submitted</h3>
+          <p className="text-center text-muted-foreground">Thank you for your feedback!</p>
+        </motion.div>
+      ) : (
+        <>
+          <motion.div
+            key="header"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <h2 className="text-lg font-semibold mb-2">Send feedback</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Let me know how the site is helping you or any bugs you may find.
+            </p>
+          </motion.div>
+          <motion.form
+            key="form"
+            action={formAction}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <div className="flex flex-col gap-4 py-4">
+              <Textarea
+                id="feedbackText"
+                name="feedback"
+                className="bg-white/5 h-[200px]"
+                required
+                placeholder="Your feedback..."
+              />
+            </div>
+            <Button
+              type="submit"
+              className="w-full h-12 bg-white/5"
+              variant="outline"
+              disabled={pending}
+            >
+              {pending ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                "Submit Feedback"
+              )}
+            </Button>
+          </motion.form>
+        </>
+      )}
+    </AnimatePresence>
+  )
+}
+
+export default function FeedbackForm() {
+  const [isOpen, setIsOpen] = useState(false)
+  const isDesktop = useMediaQuery("(min-width: 639px)")
+
+  const handleOpenChange = useCallback((open: boolean) => {
+    setIsOpen(open)
+  }, [])
 
   const triggerButton = (
     <Button className="w-fit order-1 sm:order-2 p-0" variant="link" size="sm">
       Send feedback
     </Button>
-  );
+  )
 
   if (isDesktop) {
     return (
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog open={isOpen} onOpenChange={handleOpenChange}>
         <DialogTrigger asChild>{triggerButton}</DialogTrigger>
         <DialogContent className="sm:max-w-[600px] border border-input bg-background">
-          <DialogHeader>
-            <DialogTitle>Send feedback </DialogTitle>
-            <DialogDescription>
-              Let me know how the site is helping you or any bugs you may find.
-            </DialogDescription>
-          </DialogHeader>
-          <FeedbackFormContent onSubmit={handleSubmit} />
+          <FeedbackFormContent />
         </DialogContent>
       </Dialog>
-    );
+    )
   }
 
   return (
-    <Drawer open={isOpen} onOpenChange={setIsOpen}>
+    <Drawer open={isOpen} onOpenChange={handleOpenChange}>
       <DrawerTrigger asChild>{triggerButton}</DrawerTrigger>
       <DrawerContent className="border border-input bg-background">
-        <DrawerHeader className="text-left">
-          <DrawerTitle>Send feedback</DrawerTitle>
-          <DrawerDescription>
-            Let me know how the site is helping you or any bugs you may find.
-          </DrawerDescription>
-        </DrawerHeader>
-        <div className="px-4">
-          <FeedbackFormContent onSubmit={handleSubmit} />
+        <div className="px-4 py-4">
+          <FeedbackFormContent />
         </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
@@ -120,5 +166,5 @@ export function FeedbackForm() {
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  );
+  )
 }
