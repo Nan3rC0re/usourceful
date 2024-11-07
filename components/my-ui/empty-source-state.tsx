@@ -9,7 +9,7 @@ export default function EmptyResourceState() {
         </div>
         <h1 className="text-sm font-semibold">No resource posted</h1>
         <p className="text-xs text-muted-foreground">
-          This page is being built...
+          This page is being built and will have content soon.
         </p>
       </div>
     </div>

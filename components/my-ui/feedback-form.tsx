@@ -27,7 +27,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-async function submitFeedback(prevState: any, formData: FormData) {
+async function submitFeedback(prevState: unknown, formData: FormData) {
   const feedback = formData.get("feedback") as string
   try {
     const { data, error } = await supabase
