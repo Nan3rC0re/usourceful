@@ -65,7 +65,7 @@ const OrgItems = ({ name, link, description }: Organizations) => {
 export default function EarlyCareers() {
   return (
     <div className="w-full flex flex-col mt-2  text-start  p-1  overflow-hidden h-full mb-40 ">
-      <h1 className="mb-12 text-sm border-b py-4 border-neutral-800">
+      <h1 className="mb-12 text-sm border-b py-4 dark:border-neutral-800">
         Communities and programs designed to support, mentor, and provide
         opportunities for students pursuing a career in tech.
       </h1>
