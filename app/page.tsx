@@ -5,6 +5,7 @@ import EarlyCareers from "@/app/early-careers/page";
 import Organizations from "@/app/organizations/page";
 import CareerPath from "@/app/career-paths/page";
 import Courses from "@/app/courses/pages";
+import ShimmerDiv from "@/components/my-ui/shimmer-button";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState("Early Careers");
@@ -27,6 +28,7 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 flex justify-center w-full">
       <main className="flex flex-col mt-[80px] w-[80rem] items-center text-center ">
+        <ShimmerDiv/>
         <h1 className="md:text-4xl text-2xl font-semibold dark:text-white/85 text-neutral-900">
           A library of resources for computer science students
         </h1>
