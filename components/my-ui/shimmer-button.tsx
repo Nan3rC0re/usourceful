@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 
 export default function ShimmerDiv() {
   return (
-    <div className="relative overflow-hidden border py-2 px-4 rounded-full bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-600 mb-6">
-      {/* Fast shimmer layer */}
+    <div className="relative flex items-center overflow-hidden border py-2 px-4 rounded-full bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-600 mb-6">
+      {/* Fix the rotation and speed of this  */}
       <motion.div
         className="absolute inset-0 origin-center"
         initial={{ x: "-100%", rotate: -1 }}
-        animate={{ x: "100%", rotate: 1 }}
+        animate={{ x: "100%", rotate: 45 }}
         transition={{
           x: {
-            duration: 0.8,
+            duration: 0.4,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop",
-            repeatDelay: 3,
+            repeatDelay: 4,
           },
           rotate: {
-            duration: 4,
+            duration: 45,
             repeat: Infinity,
             ease: "easeInOut",
-            repeatType: "reverse",
-            repeatDelay: 3,
+            repeatType: "loop",
+            repeatDelay: 4,
           },
         }}
         style={{
@@ -36,21 +36,21 @@ export default function ShimmerDiv() {
       <motion.div
         className="absolute inset-0 origin-center"
         initial={{ x: "-100%", rotate: -1 }}
-        animate={{ x: "100%", rotate: 1 }}
+        animate={{ x: "100%", rotate: 45 }}
         transition={{
           x: {
-            duration: 0.8,
+            duration: 0.4,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop",
-            repeatDelay: 3,
+            repeatDelay: 4,
           },
           rotate: {
-            duration: 4,
+            duration: 45,
             repeat: Infinity,
             ease: "easeInOut",
             repeatType: "reverse",
-            repeatDelay: 3,
+            repeatDelay: 4,
           },
         }}
         style={{

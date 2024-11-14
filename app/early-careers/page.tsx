@@ -97,7 +97,7 @@ export default function EarlyCareers() {
   return (
     <div className="w-full flex flex-col mt-2  text-start  p-1  overflow-hidden h-full mb-40 ">
       <h1 className="mb-12 text-sm border-b py-4 dark:border-neutral-800">
-        Programs and opportunities designed for first- and second-year Computer
+        Programs and opportunities designed for first and second-year Computer
         Science students to gain early exposure to the industry.
       </h1>
       {internships.map((internship, index) => (

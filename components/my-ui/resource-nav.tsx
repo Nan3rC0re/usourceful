@@ -40,7 +40,7 @@ export default function ResourceNav({
             size="sm"
             className={`rounded-full ${
               currentPage === nav.name
-                ? "dark:bg-neutral-800 bg-neutral-200 "
+                ? "dark:bg-neutral-800 bg-neutral-200  "
                 : ""
             }`}
             variant="outline"
