@@ -1,57 +1,53 @@
-"use client"
+"use client";
 
-import { useState, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import { useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerFooter,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import { Textarea } from "@/components/ui/textarea"
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { CheckCircle2, Loader2 } from "lucide-react"
-import { createClient } from "@supabase/supabase-js"
-import { useFormStatus } from "react-dom"
-import { useFormState } from "react-dom"
+} from "@/components/ui/drawer";
+import { Textarea } from "@/components/ui/textarea";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { CheckCircle2, Loader2 } from "lucide-react";
+import { createClient } from "@supabase/supabase-js";
+import { useFormStatus } from "react-dom";
+import { useFormState } from "react-dom";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+);
 
 async function submitFeedback(prevState: unknown, formData: FormData) {
-  const feedback = formData.get("feedback") as string
+  const feedback = formData.get("feedback") as string;
   try {
     const { data, error } = await supabase
       .from("feedback")
-      .insert([{ feedback: feedback }])
+      .insert([{ feedback: feedback }]);
 
-    if (error) throw error
+    if (error) throw error;
 
-    console.log("Feedback submitted:", data)
+    console.log("Feedback submitted:", data);
     return {
       type: "success",
-    }
+    };
   } catch (error) {
-    console.error("Error submitting feedback:", error)
+    console.error("Error submitting feedback:", error);
     return {
       type: "error",
       message: "Failed to submit feedback. Please try again.",
-    }
+    };
   }
 }
 
 function FeedbackFormContent() {
-  const { pending } = useFormStatus()
-  const [state, formAction] = useFormState(submitFeedback, null)
+  const { pending } = useFormStatus();
+  const [state, formAction] = useFormState(submitFeedback, null);
 
   return (
     <AnimatePresence mode="wait">
@@ -65,8 +61,12 @@ function FeedbackFormContent() {
           className="flex flex-col items-center justify-center py-8 space-y-4"
         >
           <CheckCircle2 className="w-16 h-16 text-green-500" />
-          <h3 className="text-xl font-semibold">Feedback Successfully Submitted</h3>
-          <p className="text-center text-muted-foreground">Thank you for your feedback!</p>
+          <h3 className="text-xl font-semibold">
+            Feedback Successfully Submitted
+          </h3>
+          <p className="text-center text-muted-foreground">
+            Thank you for your feedback!
+          </p>
         </motion.div>
       ) : (
         <>
@@ -94,7 +94,7 @@ function FeedbackFormContent() {
               <Textarea
                 id="feedbackText"
                 name="feedback"
-                className="bg-white/5 h-[200px]"
+                className="bg-white/5 h-[200px] max-h-[40vh]"
                 required
                 placeholder="Your feedback..."
               />
@@ -118,22 +118,22 @@ function FeedbackFormContent() {
         </>
       )}
     </AnimatePresence>
-  )
+  );
 }
 
 export default function FeedbackForm() {
-  const [isOpen, setIsOpen] = useState(false)
-  const isDesktop = useMediaQuery("(min-width: 639px)")
+  const [isOpen, setIsOpen] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 639px)");
 
   const handleOpenChange = useCallback((open: boolean) => {
-    setIsOpen(open)
-  }, [])
+    setIsOpen(open);
+  }, []);
 
   const triggerButton = (
     <Button className="w-fit order-1 sm:order-2 p-0" variant="link" size="sm">
       Send feedback
     </Button>
-  )
+  );
 
   if (isDesktop) {
     return (
@@ -143,7 +143,7 @@ export default function FeedbackForm() {
           <FeedbackFormContent />
         </DialogContent>
       </Dialog>
-    )
+    );
   }
 
   return (
@@ -166,5 +166,5 @@ export default function FeedbackForm() {
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  )
+  );
 }

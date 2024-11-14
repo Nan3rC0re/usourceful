@@ -5,6 +5,9 @@ import EarlyCareers from "@/app/early-careers/page";
 import Organizations from "@/app/organizations/page";
 import CareerPath from "@/app/career-paths/page";
 import Courses from "@/app/courses/pages";
+import ShimmerDiv from "@/components/my-ui/shimmer-button";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState("Early Careers");
@@ -24,10 +27,34 @@ export default function Home() {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        mass: 1,
+      },
+    },
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="min-h-screen p-4 flex justify-center w-full">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="min-h-screen p-4 flex justify-center w-full"
+    >
       <main className="flex flex-col mt-[80px] w-[80rem] items-center text-center ">
-        <h1 className="md:text-4xl text-2xl font-semibold text-white/85">
+        <ShimmerDiv />
+        <h1 className="md:text-4xl text-2xl font-semibold dark:text-white/85 text-neutral-900">
           A library of resources for computer science students
         </h1>
         <p className="md:text-lg text-sm mt-1 text-muted-foreground">
@@ -44,6 +71,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 }

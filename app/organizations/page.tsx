@@ -50,7 +50,7 @@ const OrgItems = ({ name, link, description }: Organizations) => {
     <Link
       href={link}
       target="_blank"
-      className="hover:bg-white/5 rounded-2xl p-6  w-full text-start flex "
+      className="dark:hover:bg-white/5 hover:bg-neutral-100 rounded-2xl p-6  w-full text-start flex "
     >
       <div className="">
         <h1 className="font-semibold max-sm:text-sm mb-1">{name}</h1>
@@ -62,10 +62,10 @@ const OrgItems = ({ name, link, description }: Organizations) => {
   );
 };
 
-export default function EarlyCareers() {
+export default function Organizations() {
   return (
     <div className="w-full flex flex-col mt-2  text-start  p-1  overflow-hidden h-full mb-40 ">
-      <h1 className="mb-12 text-sm border-b py-4 border-neutral-800">
+      <h1 className="mb-12 text-sm border-b py-4 dark:border-neutral-800">
         Communities and programs designed to support, mentor, and provide
         opportunities for students pursuing a career in tech.
       </h1>

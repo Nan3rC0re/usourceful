@@ -39,7 +39,9 @@ export default function ResourceNav({
             key={index}
             size="sm"
             className={`rounded-full ${
-              currentPage === nav.name ? "bg-neutral-800 " : ""
+              currentPage === nav.name
+                ? "dark:bg-neutral-800 bg-neutral-200  "
+                : ""
             }`}
             variant="outline"
             onClick={() => setCurrentPage(nav.name)}
