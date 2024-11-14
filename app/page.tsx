@@ -10,6 +10,10 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [currentPage, setCurrentPage] = useState("Early Careers");
 
   const renderContent = () => {
@@ -40,10 +44,6 @@ export default function Home() {
       },
     },
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <motion.div
