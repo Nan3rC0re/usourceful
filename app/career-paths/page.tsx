@@ -1,6 +1,6 @@
 import React from "react";
 // import Link from "next/link";
-import EmptyResourceState from "@/components/my-ui/empty-source-state";
+import EmptyResourceState from "@/components/empty-source-state";
 
 // interface Careers {
 //   name: string;

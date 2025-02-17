@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ResourceNav from "@/components/my-ui/resource-nav";
+import ResourceNav from "@/components/resource-nav";
 import EarlyCareers from "@/app/early-careers/page";
 import Organizations from "@/app/organizations/page";
 import CareerPath from "@/app/career-paths/page";
