@@ -1,19 +1,20 @@
 import Image from "next/image";
-import React, { Fragment } from "react";
 
 const DemoImg = () => {
   return (
-    <Fragment>
-      <div className="max-w-[1336px] w-full h-[744px] bg-[#F6F6F6] rounded-tl-3xl rounded-tr-3xl relative overflow-hidden ">
-        <Image
-          src="/Landing/demo.png"
-          alt="demoImg"
-          width={1208}
-          height={902}
-          className="absolute left-1/2 top-16 transform -translate-x-1/2 rounded-3xl"
-        />
+    <div className="rounded-2xl md:rounded-3xl aspect-[16/9] w-full overflow-hidden lg:ps-20 lg:pt-20 md:ps-12 md:pt-12 pt-4 ps-4 bg-[#F6F6F6] border">
+      <div className="relative size-full overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/Landing/demo.png"
+            alt="demoImg"
+            width={1208}
+            height={902}
+            className="size-full select-none max-lg:rounded-tl-xl lg:rounded-tl-3xl object-cover object-left-top "
+          />
+        </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

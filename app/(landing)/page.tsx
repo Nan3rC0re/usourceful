@@ -6,12 +6,12 @@ import React from "react";
 
 const Landing = () => {
   return (
-    <div className="min-h-screen mt-[168px] flex flex-col items-center max-w-[1356px] w-full gap-40">
+    <div className="min-h-screen mt-[168px] flex flex-col items-center max-w-[1356px] w-full lg:gap-40 gap-20">
       <Header />
-      <div className="flex flex-col w-full gap-60 items-center">
+      <div className="flex flex-col w-full lg:gap-60 gap-40 items-center">
         <DemoImg />
         <Features />
-        <CTA/>
+        <CTA />
       </div>
     </div>
   );
