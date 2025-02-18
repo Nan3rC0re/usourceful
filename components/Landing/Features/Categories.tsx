@@ -9,7 +9,7 @@ const Categories = () => {
         Discover resources tailored to your needs—more categories coming soon.
       </p>
 
-      <div className=" group-hover:scale-[140%] transition-all duration-200 absolute inset-0  translate-y-[55%] sm:translate-y-[40%] lg:translate-y-[50%]  ">
+      <div className=" group-hover:scale-[120%] transition-all duration-200 absolute inset-0  translate-y-[55%] sm:translate-y-[40%] lg:translate-y-[45 %]  ">
         <Image
           src="/Landing/categories.png"
           alt="categoriesImg"
