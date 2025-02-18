@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { Fragment } from "react";
 import Categories from "./Categories";
 import Request from "./Request";
