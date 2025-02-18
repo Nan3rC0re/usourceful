@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const DemoImg = () => {
   return (
-    <div className="rounded-2xl md:rounded-3xl aspect-[16/9] w-full overflow-hidden lg:ps-20 lg:pt-20 md:ps-12 md:pt-12 pt-4 ps-4 bg-[#F6F6F6] border">
+    <div className="rounded-2xl md:rounded-3xl aspect-[16/9] w-full overflow-hidden lg:ps-20 lg:pt-20 md:ps-12 md:pt-12 pt-4 ps-4 bg-[#f8f8f8] border">
       <div className="relative size-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
