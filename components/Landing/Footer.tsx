@@ -20,8 +20,9 @@ const Footer = () => {
               X(Twitter)
             </Link>
             <Link
-              href=""
+              href="https://www.linkedin.com/in/nana-kofi-okae/"
               className="transition-colors duration-200 hover:text-neutral-800"
+              target="_blank"
             >
               LinkedIn
             </Link>

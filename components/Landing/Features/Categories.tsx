@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "motion/react";
 
 const Categories = () => {
   return (
@@ -9,7 +11,7 @@ const Categories = () => {
         Discover resources tailored to your needs—more categories coming soon.
       </p>
 
-      <div className="feature-category-container">
+      <motion.div className="feature-category-container">
         <Image
           src="/Landing/categories.png"
           alt="categoriesImg"
@@ -17,7 +19,7 @@ const Categories = () => {
           height={200}
           className=" feature-category-img"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
