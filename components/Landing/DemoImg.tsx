@@ -7,10 +7,10 @@ const DemoImg = () => {
     <div className="demo-section-bg">
       <div className="relative size-full overflow-hidden">
         <motion.div
-          initial={{ y: -1, opacity: 0, filter: "blur(6px)" }}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+          initial={{ y: -2, opacity: 0, filter: "blur(6px)", scale:1.04}}
+          animate={{ y: 0, opacity: 1, filter: "blur(0px)", scale:1 }}
           transition={{
-            duration: 0.4,
+            duration: 0.9,
             ease: "easeOut",
             delay: 0.9,
           }}

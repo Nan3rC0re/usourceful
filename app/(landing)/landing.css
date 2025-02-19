@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* html {
+  scroll-behavior: smooth;
+} */
 @layer utilities {
   .navbar {
     @apply fixed top-0 left-0 z-50 pt-6  w-full flex justify-center items-center;

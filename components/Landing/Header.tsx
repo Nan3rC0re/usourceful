@@ -8,10 +8,10 @@ const Header = () => {
     <header>
       <div className="header-section">
         <motion.h1
-          initial={{ y: -2, opacity: 0, filter: "blur(6px)" }}
+          initial={{ y: -4, opacity: 0, filter: "blur(6px)" }}
           animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
           transition={{
-            duration: 0.4,
+            duration: 0.5,
             ease: "easeOut",
             delay: 0,
           }}
@@ -21,12 +21,12 @@ const Header = () => {
         </motion.h1>
 
         <motion.p
-          initial={{ y: -2, opacity: 0, filter: "blur(6px)" }}
+          initial={{ y: -3, opacity: 0, filter: "blur(6px)" }}
           animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
           transition={{
-            duration: 0.4,
+            duration: 0.5,
             ease: "easeOut",
-            delay: 0.3,
+            delay: 0.4,
           }}
           className="sub-header"
         >
@@ -35,10 +35,10 @@ const Header = () => {
         </motion.p>
 
         <motion.div
-          initial={{ y: -2, opacity: 0, filter: "blur(6px)" }}
+          initial={{ y: -4, opacity: 0, filter: "blur(6px)" }}
           animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
           transition={{
-            duration: 0.4,
+            duration: 0.5,
             ease: "easeOut",
             delay: 0.6,
           }}
