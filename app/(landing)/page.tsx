@@ -6,9 +6,9 @@ import React from "react";
 
 const Landing = () => {
   return (
-    <div className="min-h-screen mt-[168px] flex flex-col items-center max-w-[1356px] w-full lg:gap-40 gap-20">
+    <div className="landing-section">
       <Header />
-      <div className="flex flex-col w-full lg:gap-60 gap-32 items-center">
+      <div className="landing-sub-section">
         <DemoImg />
         <Features />
         <CTA />
