@@ -55,7 +55,11 @@ const Waitlist = () => {
             }}
             className="flex  flex-col md:flex-row gap-2 w-full max-w-xl"
           >
-            <Input placeholder="School email" type="email" className="w-full" />
+            <Input
+              placeholder="School email"
+              type="email"
+              className="w-full text-base"
+            />
             <Link href="/waitlist" passHref>
               <Button className="max-md:w-full">Join Waitlist</Button>
             </Link>
