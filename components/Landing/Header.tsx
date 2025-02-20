@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -26,7 +27,7 @@ const Header = () => {
           transition={{
             duration: 0.5,
             ease: "easeOut",
-            delay: 0.4,
+            delay: 0.3,
           }}
           className="sub-header"
         >
@@ -40,10 +41,12 @@ const Header = () => {
           transition={{
             duration: 0.5,
             ease: "easeOut",
-            delay: 0.6,
+            delay: 0.5,
           }}
         >
-          <Button>Join Waitlist</Button>
+          <Link href="/waitlist" passHref>
+            <Button>Join Waitlist</Button>
+          </Link>
         </motion.div>
       </div>
     </header>

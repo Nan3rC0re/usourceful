@@ -7,12 +7,12 @@ const DemoImg = () => {
     <div className="demo-section-bg">
       <div className="relative size-full overflow-hidden">
         <motion.div
-          initial={{ y: -2, opacity: 0, filter: "blur(6px)", scale:1.04}}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)", scale:1 }}
+          initial={{ y: -2, opacity: 0, filter: "blur(6px)", scale: 1.04 }}
+          animate={{ y: 0, opacity: 1, filter: "blur(0px)", scale: 1 }}
           transition={{
             duration: 0.9,
             ease: "easeOut",
-            delay: 0.9,
+            delay: 0.6,
           }}
           className="absolute inset-0"
         >
@@ -21,6 +21,7 @@ const DemoImg = () => {
             alt="demoImg"
             width={1208}
             height={902}
+            priority
             className="demo-img "
           />
         </motion.div>

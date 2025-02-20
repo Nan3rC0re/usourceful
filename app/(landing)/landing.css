@@ -16,13 +16,7 @@
     @apply min-h-screen mt-[168px] flex flex-col items-center max-w-[1356px] w-full lg:gap-20 gap-20;
   }
   .landing-sub-section {
-    @apply flex flex-col w-full lg:gap-60 gap-32 items-center;
-  }
-  .header-section {
-    @apply flex flex-col gap-4 text-center items-center w-full  max-w-[600px] md:max-w-[863px];
-  }
-  .sub-header {
-    @apply text-muted-foreground max-w-[480px]  w-full  text-sm md:text-base;
+    @apply flex flex-col w-full lg:gap-40 gap-32 items-center;
   }
   .demo-section-bg {
     @apply rounded-2xl md:rounded-3xl aspect-[16/9] w-full overflow-hidden lg:ps-20 lg:pt-20 md:ps-12 md:pt-12 pt-4 ps-4 bg-[#f8f8f8] border;

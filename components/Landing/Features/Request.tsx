@@ -17,6 +17,7 @@ export default function Request() {
             alt="categoriesImg"
             width={2000}
             height={200}
+            priority
             className=" feature-request-img "
           />
         </div>

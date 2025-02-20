@@ -22,7 +22,9 @@ export default function Navbar() {
           <Icons.logo className="w-8 h-8" />
           <h1 className="text-xl font-medium">usourceful</h1>
         </Link>
-        <Button>Join Waitlist</Button>
+        <Link href="/waitlist" passHref>
+          <Button>Join Waitlist</Button>
+        </Link>
       </div>
     </nav>
   );

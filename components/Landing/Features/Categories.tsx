@@ -17,6 +17,7 @@ const Categories = () => {
           alt="categoriesImg"
           width={2000}
           height={200}
+          priority
           className=" feature-category-img"
         />
       </motion.div>

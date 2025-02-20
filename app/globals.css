@@ -67,3 +67,12 @@ html {
     --chart-5: 340 75% 55%;
   }
 }
+
+@layer base {
+  .header-section {
+    @apply flex flex-col gap-4 text-center items-center w-full  max-w-[600px] md:max-w-[863px];
+  }
+  .sub-header {
+    @apply text-muted-foreground max-w-[480px]  w-full  text-sm md:text-base;
+  }
+}
