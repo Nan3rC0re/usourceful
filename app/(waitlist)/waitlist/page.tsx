@@ -74,13 +74,13 @@ const Waitlist = () => {
             }}
           >
             <p className="text-muted-foreground text-xs">
-              You will be reach out only for Usourceful&apos;s launch — no
+              You will be emailed only for Usourceful&apos;s launch — no
               spamming.
             </p>
           </motion.div>
         </div>
       </header>
-      <div className="w-full h-full  gap-40 flex-1 items-center justify-center hidden lg:flex">
+      <div className="w-full  gap-2 lg:gap-20 flex-1 items-center justify-center flex">
         <motion.div
           initial={{ y: -2, opacity: 0, filter: "blur(6px)", scale: 0.2 }}
           animate={{
@@ -130,7 +130,7 @@ const Waitlist = () => {
           }}
         >
           <Image
-            src="/Waitlist/icon-purple.png"
+            src="/Waitlist/icon-pink.png"
             alt="demoImg"
             width={300}
             height={300}
@@ -155,6 +155,34 @@ const Waitlist = () => {
             duration: 0.4,
             ease: "easeOut",
             delay: 0.8,
+          }}
+        >
+          <Image
+            src="/Waitlist/icon-green.png"
+            alt="demoImg"
+            width={300}
+            height={300}
+            priority
+          />
+        </motion.div>
+        <motion.div
+          initial={{ y: -2, opacity: 0, filter: "blur(6px)", scale: 0.2 }}
+          animate={{
+            y: [0, -4, 0],
+            opacity: 1,
+            filter: "blur(0px)",
+            scale: 1,
+          }}
+          transition={{
+            y: {
+              delay: 1,
+              duration: 2,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            },
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0.9,
           }}
         >
           <Image
