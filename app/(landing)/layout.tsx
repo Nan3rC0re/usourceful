@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <main className=" flex flex-col items-center px-6 pb-16 bg-[#ffffff]">
+    <main className=" flex flex-col relative items-center px-6 pb-16  bg-[#ffffff]">
       <Navbar />
       {children}
       <Footer />

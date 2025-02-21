@@ -12,14 +12,14 @@ const DemoImg = () => {
           transition={{
             duration: 0.9,
             ease: "easeOut",
-            delay: 0.6,
+            delay: 0.8,
           }}
           className="absolute inset-0"
         >
           <Image
             src="/Landing/demo.png"
             alt="demoImg"
-            width={1208}
+            width={1310}
             height={902}
             priority
             className="demo-img "
