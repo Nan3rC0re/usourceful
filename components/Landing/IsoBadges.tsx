@@ -5,8 +5,8 @@ import Image from "next/image"
 const IsoBadges = () => {
   return (
     <div className="w-full flex justify-center md:absolute">
-      <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-[200px] md:w-[1350px] md:h-[300px] md:overflow-hidden ">
-        <div className="relative w-full h-full flex flex-wrap justify-center items-center md:block">
+      <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2  md:w-[1350px] md:h-[300px] md:overflow-hidden ">
+        <div className="relative w-full h-full flex  justify-center items-center md:block">
           <motion.div
             initial={{ y: 0, opacity: 0, filter: "blur(6px)", scale: 0.2 }}
             animate={{

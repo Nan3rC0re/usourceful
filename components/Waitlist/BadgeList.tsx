@@ -5,7 +5,7 @@ import React from "react";
 
 const BadgeList = () => {
   return (
-    <div className="md:w-full  flex-wrap w-[200px] gap-2 lg:gap-20 pb-6 justify-center flex">
+    <div className="md:w-full  gap-2 lg:gap-20 pb-6 justify-center flex">
       <motion.div
         initial={{ y: -2, opacity: 0, filter: "blur(6px)", scale: 0.2 }}
         animate={{
