@@ -1,5 +1,6 @@
 "use client";
 import { Icons } from "@/components/icons/icons";
+import IsoBadges from "@/components/Landing/IsoBadges";
 import BadgeList from "@/components/Waitlist/BadgeList";
 import Header from "@/components/Waitlist/Header";
 import Link from "next/link";
@@ -14,8 +15,8 @@ const Waitlist = () => {
           <h1 className="text-xl font-medium">usourceful</h1>
         </Link>
       </div>
-      <Header />
       <BadgeList />
+      <Header />
     </main>
   );
 };

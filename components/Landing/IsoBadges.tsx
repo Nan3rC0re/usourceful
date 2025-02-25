@@ -28,7 +28,7 @@ const IsoBadges = () => {
             }}
             className="m-2 md:m-0 md:absolute md:top-2 md:left-0"
           >
-            <Image
+            <Image  
               src="/Landing/icon-iso-yellow.png"
               alt="Yellow ISO badge"
               width={150}
