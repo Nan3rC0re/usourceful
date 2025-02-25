@@ -1,12 +1,12 @@
-"use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
+"use client"
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 const IsoBadges = () => {
   return (
-    <div className="w-full absolute">
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-[1350px] h-[300px] overflow-hidden">
-        <div className="relative w-full h-full ">
+    <div className="w-full flex justify-center md:absolute">
+      <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-[200px] md:w-[1350px] md:h-[300px] md:overflow-hidden ">
+        <div className="relative w-full h-full flex flex-wrap justify-center items-center md:block">
           <motion.div
             initial={{ y: 0, opacity: 0, filter: "blur(6px)", scale: 0.2 }}
             animate={{
@@ -26,7 +26,7 @@ const IsoBadges = () => {
               ease: "easeOut",
               delay: 0.6,
             }}
-            className="absolute top-2 left-0"
+            className="m-2 md:m-0 md:absolute md:top-2 md:left-0"
           >
             <Image
               src="/Landing/icon-iso-yellow.png"
@@ -34,6 +34,7 @@ const IsoBadges = () => {
               width={150}
               height={150}
               priority
+              className="w-20 h-20 md:w-[150px] md:h-[150px]"
             />
           </motion.div>
           <motion.div
@@ -55,7 +56,7 @@ const IsoBadges = () => {
               ease: "easeOut",
               delay: 0.7,
             }}
-            className="absolute top-2 right-0"
+            className="m-2 md:m-0 md:absolute md:top-2 md:right-0"
           >
             <Image
               src="/Landing/icon-iso-pink.png"
@@ -63,6 +64,7 @@ const IsoBadges = () => {
               width={150}
               height={150}
               priority
+              className="w-20 h-20 md:w-[150px] md:h-[150px]"
             />
           </motion.div>
           <motion.div
@@ -84,7 +86,7 @@ const IsoBadges = () => {
               ease: "easeOut",
               delay: 0.8,
             }}
-            className="absolute top-36 left-36"
+            className="m-2 md:m-0 md:absolute md:top-36 md:left-36"
           >
             <Image
               src="/Landing/icon-iso-green.png"
@@ -92,6 +94,7 @@ const IsoBadges = () => {
               width={150}
               height={150}
               priority
+              className="w-20 h-20 md:w-[150px] md:h-[150px]"
             />
           </motion.div>
           <motion.div
@@ -113,7 +116,7 @@ const IsoBadges = () => {
               ease: "easeOut",
               delay: 0.9,
             }}
-            className="absolute top-36 right-36"
+            className="m-2 md:m-0 md:absolute md:top-36 md:right-36"
           >
             <Image
               src="/Landing/icon-iso-blue.png"
@@ -121,12 +124,14 @@ const IsoBadges = () => {
               width={150}
               height={150}
               priority
+              className="w-20 h-20 md:w-[150px] md:h-[150px]"
             />
           </motion.div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default IsoBadges;
+export default IsoBadges
+
