@@ -1,6 +1,5 @@
 "use client";
 import { Icons } from "@/components/icons/icons";
-import IsoBadges from "@/components/Landing/IsoBadges";
 import BadgeList from "@/components/Waitlist/BadgeList";
 import Header from "@/components/Waitlist/Header";
 import Link from "next/link";
