@@ -5,7 +5,6 @@ export default function WaitlistEmail() {
     <Html>
       <Section style={{ backgroundColor: "#ffffff" }}>
         <Container>
-          <Img src="/Landing/logo.png" alt="Usourceful Logo" width={90} />
           <Text className="text-2xl font-bold">
             Thanks for joining our waitlist!
           </Text>
