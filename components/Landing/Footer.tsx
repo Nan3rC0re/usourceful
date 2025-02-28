@@ -14,8 +14,9 @@ const Footer = () => {
           <p>Connect</p>
           <div className="flex flex-col gap-2 text-muted-foreground">
             <Link
-              href=""
+              href="https://x.com/kofi_okae"
               className="transition-colors duration-200 hover:text-neutral-800"
+              target="_blank"
             >
               X(Twitter)
             </Link>
