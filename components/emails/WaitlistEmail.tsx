@@ -1,4 +1,4 @@
-import { Container, Html, Img, Section, Text } from "@react-email/components";
+import { Container, Html, Section, Text } from "@react-email/components";
 import * as React from "react";
 export default function WaitlistEmail() {
   return (
