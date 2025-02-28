@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import WaitlistEmail from "../emails/WaitlistEmail";
 
 const CTA = () => {
   return (

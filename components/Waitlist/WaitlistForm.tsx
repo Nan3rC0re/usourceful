@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Loader2 } from "lucide-react";
 import { addToWaitlist } from "@/app/actions/waitlist";
 
 type WaitlistFormState = {
@@ -62,17 +64,37 @@ export default function WaitlistForm() {
       <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-2">
         <Input
           name="email"
-          placeholder="School email"
+          placeholder="Email"
           type="email"
           className="w-full text-base"
           required
         />
         <Button
           type="submit"
-          className="max-md:w-full text-base"
+          className="max-md:w-full text-base min-w-[140px] flex items-center justify-center"
           disabled={isPending}
         >
-          {isPending ? "Joining..." : "Join Waitlist"}
+          {isPending ? (
+            <motion.div
+              className="flex items-center justify-center w-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{
+                  repeat: Number.POSITIVE_INFINITY,
+                  duration: 1,
+                  ease: "linear",
+                }}
+              >
+                <Loader2 className="h-4 w-4" />
+              </motion.div>
+            </motion.div>
+          ) : (
+            <span>Join Waitlist</span>
+          )}
         </Button>
       </form>
 
