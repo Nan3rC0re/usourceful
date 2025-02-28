@@ -24,7 +24,7 @@ export default function WaitlistForm() {
     if (state.success) {
       const timer = setTimeout(() => {
         setState((prev) => ({ ...prev, success: "" }));
-      }, 3000);
+      }, 6000);
       return () => clearTimeout(timer);
     }
   }, [state.success]);

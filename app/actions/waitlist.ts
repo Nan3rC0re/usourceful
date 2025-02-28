@@ -73,7 +73,7 @@ export async function addToWaitlist(formData: FormData) {
 
     return {
       success:
-        "Successfully added to waitlist! Check your email for confirmation.",
+        "Successfully added to waitlist! Check your inbox or spam folder for confirmation.",
     };
   } catch (error) {
     console.error("Unexpected error:", error);
