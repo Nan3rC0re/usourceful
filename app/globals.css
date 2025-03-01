@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-family: var(--font-inter);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -56,5 +65,14 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  .header-section {
+    @apply flex flex-col gap-4 text-center items-center w-full  max-w-[600px] md:max-w-[863px];
+  }
+  .sub-header {
+    @apply text-muted-foreground max-w-[480px]  w-full  text-sm md:text-base;
   }
 }

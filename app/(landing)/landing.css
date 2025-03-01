@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html {
+  scroll-behavior: smooth;
+} */
+@layer utilities {
+  .navbar {
+    @apply fixed top-0 left-0 z-50 pt-6  w-full flex justify-center items-center;
+  }
+  .navbar-bg {
+    @apply text-sm flex items-center bg-[#e5e5e5] px-6 py-2 rounded-3xl  gap-6 bg-opacity-45 backdrop-blur-md;
+  }
+  .landing-section {
+    @apply min-h-screen mt-[168px] flex flex-col items-center max-w-[1456px] w-full gap-2 lg:gap-40;
+  }
+  .landing-sub-section {
+    @apply flex flex-col w-full max-lg:pt-20  lg:gap-40 gap-32 items-center;
+  }
+  .demo-section-bg {
+    @apply rounded-2xl md:rounded-3xl aspect-[16/9] w-full overflow-hidden  lg:ps-20 lg:pt-20 md:ps-12 md:pt-12 pt-4 ps-4 bg-[#f8f8f8] border;
+  }
+  .demo-img {
+    @apply md:rounded-tl-3xl rounded-tl-xl  xl:rounded-tr-3xl;
+  }
+  .feature-section {
+    @apply flex flex-col gap-8 lg:gap-16 items-center w-full;
+  }
+  .feature-title {
+    @apply font-medium text-center text-2xl lg:text-3xl w-full max-w-lg;
+  }
+  .feature-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 justify-center gap-6 w-full max-lg:max-w-3xl;
+  }
+  .feature-card {
+    @apply relative flex flex-col gap-2 bg-[#f8f8f8] aspect-[1.1] md:aspect-[1.2] lg:aspect-[1.08] rounded-3xl border p-12 overflow-hidden;
+  }
+  .feature-card-title {
+    @apply font-medium text-base lg:text-2xl;
+  }
+  .feature-card-description {
+    @apply text-muted-foreground font-normal text-sm lg:text-base max-w-md;
+  }
+  .feature-category-container {
+    @apply group-hover:scale-[120%] transition-all duration-200 absolute inset-0  translate-y-[55%] sm:translate-y-[40%] lg:translate-y-[45%];
+  }
+  .feature-category-img {
+    @apply object-contain scale-[180%] aspect-[3.0]  select-none;
+  }
+  .feature-request-container {
+    @apply absolute inset-0 lg:ps-12 lg:pt-32 ps-2 pt-36;
+  }
+  .feature-request-img {
+    @apply group-hover:rotate-[-5deg] transition-all duration-200 size-full select-none max-lg:rounded-tl-xl lg:rounded-tl-3xl object-cover object-left-top;
+  }
+  .cta-bg {
+    @apply flex flex-col md:flex-row w-full  justify-center  items-start lg:items-center gap-4  p-12 lg:p-24 bg-[#f8f8f8] rounded-3xl overflow-hidden;
+  }
+  .cta {
+    @apply font-medium  text-xl lg:text-3xl w-full  max-w-lg;
+  }
+}

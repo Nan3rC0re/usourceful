@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .waitlist-container {
+    @apply w-full flex flex-col items-center relative min-h-screen overflow-hidden px-6 md:mb-0 ;
+  }
+}
