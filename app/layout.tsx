@@ -13,7 +13,19 @@ export const metadata: Metadata = {
   title: "Usourceful",
   description: "A library of useful resources for computer science students.",
   icons: {
-    icon: "/",
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.svg",
+    apple: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
   },
   openGraph: {
     title: "Usourceful",
@@ -22,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Usourceful",
     images: [
       {
-        url: "/",
+        url: "/seo-img.png",
         width: 1200,
         height: 630,
         alt: "Usourceful banner",
@@ -35,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Usourceful",
     description: "A library of useful resources for computer science students.",
-    images: ["/"],
+    images: ["/seo-img.png"],
   },
 };
 
