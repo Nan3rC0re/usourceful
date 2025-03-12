@@ -9,8 +9,8 @@ const CTA = () => {
         <h2 className="cta ">
           Take your academic and career development to the next level.
         </h2>
-        <Link href="/waitlist" passHref>
-          <Button>Join Waitlist</Button>
+        <Link href="/sign-up" passHref>
+          <Button>Get Started </Button>
         </Link>
       </div>
     </Fragment>

@@ -44,8 +44,8 @@ const Header = () => {
             delay: 0.5,
           }}
         >
-          <Link href="/waitlist" passHref>
-            <Button>Join Waitlist</Button>
+          <Link href="/sign-up" passHref>
+            <Button>Get Started</Button>
           </Link>
         </motion.div>
       </div>
