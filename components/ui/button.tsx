@@ -9,21 +9,21 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground  hover:bg-primary/90",
+        default: "bg-violet-600 text-primary-foreground  hover:bg-violet-700",
         destructive:
           "bg-destructive text-destructive-foreground  hover:bg-destructive/90",
         outline:
           "border border-input bg-background  hover:bg-accent hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground  hover:bg-secondary/80",
-        ghost: "hover:text-neutral-700",
+        ghost: "lg:hover:bg-neutral-200 hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "px-4 py-3",
+        default: "px-7 py-3",
         sm: "h-8 rounded-2xl px-3 text-xs",
         lg: "h-10 rounded-2xl px-8",
-        icon: "h-7 w-7",
+        icon: "h-7 w-7 ",
       },
     },
     defaultVariants: {

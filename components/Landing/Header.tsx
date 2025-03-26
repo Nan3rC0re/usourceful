@@ -27,27 +27,13 @@ const Header = () => {
           transition={{
             duration: 0.5,
             ease: "easeOut",
-            delay: 0.3,
+            delay: 0.2,
           }}
           className="sub-header"
         >
           A library of useful resources for computer science students. New
           resources added weekly.
         </motion.p>
-
-        <motion.div
-          initial={{ y: -4, opacity: 0, filter: "blur(6px)" }}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          transition={{
-            duration: 0.5,
-            ease: "easeOut",
-            delay: 0.5,
-          }}
-        >
-          <Link href="/sign-up" passHref>
-            <Button>Get Started</Button>
-          </Link>
-        </motion.div>
       </div>
     </header>
   );

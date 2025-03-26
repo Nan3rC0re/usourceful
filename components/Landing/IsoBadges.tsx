@@ -1,12 +1,12 @@
-"use client"
-import { motion } from "framer-motion"
-import Image from "next/image"
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const IsoBadges = () => {
   return (
-    <div className="w-full flex justify-center md:absolute">
-      <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2  md:w-[1350px] md:h-[300px] md:overflow-hidden ">
-        <div className="relative w-full h-full flex  justify-center items-center md:block">
+    <div className="w-full flex justify-center md:absolute top-[8rem] ">
+      <div className="md:absolute md:left-1/2 md:-translate-x-1/2  md:w-[1350px] md:h-[300px] md:overflow-hidden ">
+        <div className="relative w-full h-full flex  justify-center items-center">
           <motion.div
             initial={{ y: 0, opacity: 0, filter: "blur(6px)", scale: 0.2 }}
             animate={{
@@ -28,13 +28,13 @@ const IsoBadges = () => {
             }}
             className="m-2 md:m-0 md:absolute md:top-2 md:left-0"
           >
-            <Image  
+            <Image
               src="/Landing/icon-iso-yellow.png"
               alt="Yellow ISO badge"
               width={150}
               height={150}
               priority
-              className="w-20 h-20 md:w-[150px] md:h-[150px]"
+              className="w-20 h-20 md:w-[150px] md:h-[150px] aspect-square object-contain"
             />
           </motion.div>
           <motion.div
@@ -64,7 +64,7 @@ const IsoBadges = () => {
               width={150}
               height={150}
               priority
-              className="w-20 h-20 md:w-[150px] md:h-[150px]"
+              className="w-20 h-20 md:w-[150px] md:h-[150px] aspect-square object-contain"
             />
           </motion.div>
           <motion.div
@@ -94,7 +94,7 @@ const IsoBadges = () => {
               width={150}
               height={150}
               priority
-              className="w-20 h-20 md:w-[150px] md:h-[150px]"
+              className="w-20 h-20 md:w-[150px] md:h-[150px] aspect-square object-contain"
             />
           </motion.div>
           <motion.div
@@ -124,14 +124,13 @@ const IsoBadges = () => {
               width={150}
               height={150}
               priority
-              className="w-20 h-20 md:w-[150px] md:h-[150px]"
+              className="w-20 h-20 md:w-[150px] md:h-[150px] aspect-square object-contain"
             />
           </motion.div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default IsoBadges
-
+export default IsoBadges;

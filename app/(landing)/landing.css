@@ -5,21 +5,23 @@
 /* html {
   scroll-behavior: smooth;
 } */
+
 @layer utilities {
   .navbar {
-    @apply fixed top-0 left-0 z-50 pt-6  w-full flex justify-center items-center;
+    @apply fixed z-50  lg:px-6 py-2 w-full flex justify-center items-center border-b  bg-white;
   }
   .navbar-bg {
-    @apply text-sm flex items-center bg-[#e5e5e5] px-6 py-2 rounded-3xl  gap-6 bg-opacity-45 backdrop-blur-md;
+    @apply text-sm flex items-center w-full  justify-between px-6 py-2;
   }
+
   .landing-section {
-    @apply min-h-screen mt-[168px] flex flex-col items-center max-w-[1456px] w-full gap-2 lg:gap-40;
+    @apply min-h-screen   mt-[98px] md:mt-[120px] flex flex-col items-center max-w-[1456px] w-full gap-2 md:gap-16 lg:gap-40;
   }
   .landing-sub-section {
     @apply flex flex-col w-full max-lg:pt-20  lg:gap-40 gap-32 items-center;
   }
   .demo-section-bg {
-    @apply rounded-2xl md:rounded-3xl aspect-[16/9] w-full overflow-hidden  lg:ps-20 lg:pt-20 md:ps-12 md:pt-12 pt-4 ps-4 bg-[#f8f8f8] border;
+    @apply rounded-2xl md:rounded-3xl aspect-[16/9] w-full overflow-hidden lg:ps-20 lg:pt-20 md:ps-12 md:pt-12 pt-4 ps-4 bg-[#f8f8f8] border;
   }
   .demo-img {
     @apply md:rounded-tl-3xl rounded-tl-xl  xl:rounded-tr-3xl;
