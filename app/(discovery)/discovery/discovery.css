@@ -15,6 +15,6 @@
   }
 
   .discovery-section {
-    @apply mt-[98px] md:mt-[120px] flex flex-col mb-24  w-full;
+    @apply mt-[98px] md:mt-[120px] flex flex-col mb-24 min-h-[50rem]  w-full;
   }
 }

@@ -27,7 +27,7 @@ export default function DiscoveryPage() {
         selectedTag={selectedTag}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6 w-full mt-6">
         {filteredResources.length > 0 ? (
           filteredResources.map((resource, index) => (
             <Link
@@ -53,12 +53,14 @@ export default function DiscoveryPage() {
                   alt={resource.name}
                   width={400}
                   height={225}
-                  className="aspect-[16/9] bg-gray-200 rounded-md border object-cover group-hover:scale-105 transition-transform duration-200"
-                  priority={index < 4}
+                  className="aspect-[16/9] w-full bg-gray-200 rounded-md border object-cover group-hover:scale-105 transition-transform duration-200"
+                  priority
                 />
               </div>
-              <h2 className="font-medium">{resource.name}</h2>
-              <p className="text-muted-foreground font-normal text-sm line-clamp-3">
+              <h2 className="font-medium text-sm md:text-base">
+                {resource.name}
+              </h2>
+              <p className="text-muted-foreground font-normal text-xs md:text-sm line-clamp-3">
                 {resource.description}
               </p>
             </Link>
