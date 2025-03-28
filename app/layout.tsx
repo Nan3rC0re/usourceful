@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Navbar from "@/components/landing/Navbar/Navbar";
+import Footer from "@/components/landing/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -59,9 +61,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
+        <Navbar />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>
   );
 }
+22;

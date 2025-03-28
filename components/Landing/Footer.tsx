@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full max-w-[1356px]  mt-24 lg:mt-52">
-      <div className="flex flex-col gap-6 md:flex-row justify-between items-start">
+    <footer className="w-full px-6 py-12 flex justify-center border-t">
+      <div className="flex  w-full max-w-[1356px] flex-col gap-6 md:flex-row justify-between items-start">
         <Link href="/" className="flex items-center gap-1">
           <Icons.logo className="w-8 h-8" />
           <h1 className="text-xl font-medium">usourceful</h1>

@@ -7,12 +7,6 @@
 } */
 
 @layer utilities {
-  .navbar {
-    @apply fixed z-50  lg:px-6 py-2 w-full flex justify-center items-center border-b  bg-white;
-  }
-  .navbar-bg {
-    @apply text-sm flex items-center w-full  justify-between px-6 py-2;
-  }
 
   .landing-section {
     @apply min-h-screen   mt-[98px] md:mt-[120px] flex flex-col items-center max-w-[1456px] w-full gap-2 md:gap-16 lg:gap-40;

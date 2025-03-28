@@ -9,15 +9,12 @@ interface Navigation {
   href: string;
 }
 
-const navLinks: Navigation[] = [
-  { name: "Discover", href: "/discover" },
-  { name: "About", href: "/about" },
-];
+const navLinks: Navigation[] = [{ name: "Discover", href: "/discovery" }];
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-bg">
+    <nav className="fixed z-50  px-6 py-2 w-full flex justify-center items-center border-b  bg-white">
+      <div className="text-sm flex  items-center w-full justify-between py-2">
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-1 lg:pr-8">
             <Icons.logo className="w-8 h-8" />

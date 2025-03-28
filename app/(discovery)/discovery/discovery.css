@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+@layer utilities {
+  .navbar {
+    @apply fixed z-50  lg:px-6 py-2 w-full flex justify-center items-center border-b  bg-white;
+  }
+  .navbar-bg {
+    @apply text-sm flex items-center w-full  justify-between px-6 py-2;
+  }
+
+  .discovery-section {
+    @apply mt-[98px] md:mt-[120px] flex flex-col mb-24  w-full;
+  }
+}

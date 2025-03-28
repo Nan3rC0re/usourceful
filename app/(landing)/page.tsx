@@ -1,17 +1,15 @@
 "use client";
 
-import Header from "@/components/Landing/Header";
-import IsoBadges from "@/components/Landing/IsoBadges";
-import ResourcePreview from "@/components/Resources/ResourcePreview";
-import { motion } from "motion/react";
+import Header from "@/components/landing/Header";
+import IsoBadges from "@/components/landing/IsoBadges";
+
 import React from "react";
 
 const Landing = () => {
   return (
     <div className="landing-section">
-      <IsoBadges />
+      {/* <IsoBadges /> */}
       <Header />
-      <ResourcePreview />
     </div>
   );
 };

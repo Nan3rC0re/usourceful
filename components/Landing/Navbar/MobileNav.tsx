@@ -23,7 +23,7 @@ export function MobileNav({ navLinks }: MobileNavProps) {
       <Button
         variant="outline"
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden px-3 "
+        className="lg:hidden px-3 py-3"
       >
         <Menu className="h-5 w-5" />
       </Button>
@@ -33,8 +33,8 @@ export function MobileNav({ navLinks }: MobileNavProps) {
           <motion.div
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -5 }}
-            transition={{ duration: 0.2 }}
+            exit={{ opacity: 0, y: -2 }}
+            transition={{ duration: 0.1 }}
             className="absolute left-0 right-0 top-[calc(100%+0.05rem)] bg-white border-b"
           >
             <div className="px-4 py-4 max-w-[1456px] mx-auto">

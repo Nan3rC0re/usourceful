@@ -24,7 +24,7 @@ const IsoBadges = () => {
               },
               duration: 0.4,
               ease: "easeOut",
-              delay: 0.6,
+              delay: 0.3,
             }}
             className="m-2 md:m-0 md:absolute md:top-2 md:left-0"
           >
@@ -54,7 +54,7 @@ const IsoBadges = () => {
               },
               duration: 0.4,
               ease: "easeOut",
-              delay: 0.7,
+              delay: 0.5,
             }}
             className="m-2 md:m-0 md:absolute md:top-2 md:right-0"
           >
@@ -84,7 +84,7 @@ const IsoBadges = () => {
               },
               duration: 0.4,
               ease: "easeOut",
-              delay: 0.8,
+              delay: 0.4,
             }}
             className="m-2 md:m-0 md:absolute md:top-36 md:left-36"
           >
@@ -114,7 +114,7 @@ const IsoBadges = () => {
               },
               duration: 0.4,
               ease: "easeOut",
-              delay: 0.9,
+              delay: 0.6,
             }}
             className="m-2 md:m-0 md:absolute md:top-36 md:right-36"
           >

@@ -76,3 +76,12 @@ html {
     @apply text-muted-foreground max-w-[480px]  w-full  text-sm md:text-base;
   }
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
