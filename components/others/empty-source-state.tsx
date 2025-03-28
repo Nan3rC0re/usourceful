@@ -9,7 +9,7 @@ import { courses } from "@/data/courses";
 import { interviewPrep } from "@/data/interview-prep";
 import { certificates } from "@/data/certificates";
 import { earlyCareerPrograms } from "@/data/early-career-programs";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+
 
 export default function EmptyResourceState() {
   const navigateToRandomResource = () => {

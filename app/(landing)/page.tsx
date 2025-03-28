@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/components/landing/Header";
-import IsoBadges from "@/components/landing/IsoBadges";
+// import IsoBadges from "@/components/landing/IsoBadges";
 
 import React from "react";
 
