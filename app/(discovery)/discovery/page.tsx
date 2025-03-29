@@ -3,22 +3,25 @@
 import ResourceNav from "@/components/resource/resource-nav";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { getResourcesByTag } from "@/data";
-import { RESOURCE_CATEGORIES } from "@/data/constants";
+import { RESOURCE_CATEGORIES, ResourceCategory } from "@/data/constants";
 import EmptyResourceState from "@/components/others/empty-source-state";
 import { ExternalLinkIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { useSearchParams } from "next/navigation";
 import { Input } from "@/components/ui/input";
 
-export default function DiscoveryPage() {
+// Create a separate component that uses useSearchParams
+function DiscoveryContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
   const [searchQuery, setSearchQuery] = useState("");
 
   const [selectedTag, setSelectedTag] = useState<string>(
     categoryParam &&
-      Object.values(RESOURCE_CATEGORIES).includes(categoryParam as any)
+      Object.values(RESOURCE_CATEGORIES).includes(
+        categoryParam as ResourceCategory
+      )
       ? categoryParam
       : RESOURCE_CATEGORIES.ALL
   );
@@ -44,7 +47,9 @@ export default function DiscoveryPage() {
   useEffect(() => {
     if (
       categoryParam &&
-      Object.values(RESOURCE_CATEGORIES).includes(categoryParam as any)
+      Object.values(RESOURCE_CATEGORIES).includes(
+        categoryParam as ResourceCategory
+      )
     ) {
       setSelectedTag(categoryParam);
     }
@@ -60,7 +65,7 @@ export default function DiscoveryPage() {
   };
 
   return (
-    <main className="discovery-section">
+    <>
       <h1 className="md:text-5xl text-2xl font-medium">Discovery</h1>
 
       {/* Search bar */}
@@ -124,6 +129,22 @@ export default function DiscoveryPage() {
           <EmptyResourceState />
         )}
       </div>
+    </>
+  );
+}
+
+// Create a loading fallback
+function DiscoveryLoading() {
+  return <div>Loading discovery resources...</div>;
+}
+
+// Main component that uses Suspense
+export default function DiscoveryPage() {
+  return (
+    <main className="discovery-section">
+      <Suspense fallback={<DiscoveryLoading />}>
+        <DiscoveryContent />
+      </Suspense>
     </main>
   );
 }

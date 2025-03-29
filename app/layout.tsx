@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.usourceful.info"),
   title: "Usourceful",
   description: "A library of useful resources for computer science students.",
   icons: {
