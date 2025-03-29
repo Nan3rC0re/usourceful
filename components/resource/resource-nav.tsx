@@ -10,9 +10,8 @@ const categoryData = [
   { name: "Early Career Programs", tag: RESOURCE_CATEGORIES.EARLY_CAREER },
   { name: "Project Development", tag: RESOURCE_CATEGORIES.PROJECT_DEVELOPMENT },
   { name: "Interview Prep", tag: RESOURCE_CATEGORIES.INTERVIEW_PREP },
-  { name: "Courses", tag: RESOURCE_CATEGORIES.COURSES },
-  { name: "Certifications", tag: RESOURCE_CATEGORIES.CERTIFICATIONS },
-  // Add more categories as needed
+  // { name: "Courses", tag: RESOURCE_CATEGORIES.COURSES },
+  // { name: "Certifications", tag: RESOURCE_CATEGORIES.CERTIFICATIONS },
 ];
 
 interface ResourceNavProps {

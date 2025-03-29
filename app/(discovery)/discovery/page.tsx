@@ -3,25 +3,80 @@
 import ResourceNav from "@/components/resource/resource-nav";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getResourcesByTag } from "@/data";
 import { RESOURCE_CATEGORIES } from "@/data/constants";
 import EmptyResourceState from "@/components/others/empty-source-state";
-import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import { ExternalLinkIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { useSearchParams } from "next/navigation";
+import { Input } from "@/components/ui/input";
 
 export default function DiscoveryPage() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const [searchQuery, setSearchQuery] = useState("");
+
   const [selectedTag, setSelectedTag] = useState<string>(
-    RESOURCE_CATEGORIES.ALL
+    categoryParam &&
+      Object.values(RESOURCE_CATEGORIES).includes(categoryParam as any)
+      ? categoryParam
+      : RESOURCE_CATEGORIES.ALL
   );
-  const filteredResources = getResourcesByTag(selectedTag);
+
+  // Get resources filtered by tag
+  const resourcesByTag = getResourcesByTag(selectedTag);
+
+  // Further filter resources by search query
+  const filteredResources = searchQuery
+    ? resourcesByTag.filter(
+        (resource) =>
+          resource.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          resource.description
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase()) ||
+          resource.tags.some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+      )
+    : resourcesByTag;
+
+  // Update selected tag when URL parameters change
+  useEffect(() => {
+    if (
+      categoryParam &&
+      Object.values(RESOURCE_CATEGORIES).includes(categoryParam as any)
+    ) {
+      setSelectedTag(categoryParam);
+    }
+  }, [categoryParam]);
 
   const handleFilterChange = (tag: string) => {
     setSelectedTag(tag);
+    setSearchQuery(""); // Clear search when changing categories
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
     <main className="discovery-section">
       <h1 className="md:text-5xl text-2xl font-medium">Discovery</h1>
+
+      {/* Search bar */}
+      <div className="max-w-xl mx-auto my-12 w-full">
+        <div className="relative">
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+          <Input
+            type="text"
+            placeholder="Search resources..."
+            className="pl-10 w-full text-base"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
+      </div>
+
       <ResourceNav
         onFilterChange={handleFilterChange}
         selectedTag={selectedTag}

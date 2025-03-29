@@ -9,7 +9,7 @@
 @layer utilities {
 
   .landing-section {
-    @apply min-h-screen   mt-[98px] md:mt-[120px] flex flex-col items-center max-w-[1456px] w-full gap-2 md:gap-16 lg:gap-40;
+    @apply min-h-screen  mt-[98px] md:mt-[120px] flex flex-col items-center w-full gap-2 md:gap-16 lg:gap-40;
   }
   .landing-sub-section {
     @apply flex flex-col w-full max-lg:pt-20  lg:gap-40 gap-32 items-center;

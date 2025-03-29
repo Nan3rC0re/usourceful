@@ -1,7 +1,7 @@
 export const RESOURCE_CATEGORIES = {
   ALL: "all",
   ORGANIZATIONS: "organizations",
-  EARLY_CAREER: "early-career",
+  EARLY_CAREER: "early-career-programs",
   PROJECT_DEVELOPMENT: "project-development",
   INTERVIEW_PREP: "interview-prep",
   COURSES: "courses",
